@@ -18,19 +18,19 @@
              playerSelection = prompt("Type: Rock, Paper or Scissors").toLowerCase();
              computerSelection = computerPlay ();
              if (playerSelection == "rock" && computerSelection == "scissors" || 
-             playerSelection == "paper" && computerSelection == "rock" || 
-             playerSelection == "scissors" && computerSelection == "paper") {
-             result = "You win!";
+             	 playerSelection == "paper" && computerSelection == "rock" || 
+             	 playerSelection == "scissors" && computerSelection == "paper") {
+             	result = "You win!";
                
              }
              else if (playerSelection == "rock" && computerSelection == "paper" || 
-                     playerSelection == "paper" && computerSelection == "scissors" || 
-                     playerSelection == "scissors" && computerSelection == "rock") {
-                     result = "You lose!";
+                      playerSelection == "paper" && computerSelection == "scissors" || 
+                      playerSelection == "scissors" && computerSelection == "rock") {
+             	result = "You lose!";
                     
              }
              else {
-                  result = "Tie!";
+                result = "Tie!";
             
              }
              return result
@@ -41,17 +41,17 @@
              let playerScore = 0;
              let computerScore = 0;
              while (playerScore < 5 && computerScore < 5) {
-			       playRound();
+		playRound();
              if (result.search("win") >= 0) {
-                playerScore ++;
+                 playerScore ++;
              }
              else if (result.search("lose") >= 0) {
-                    computerScore ++;
+                      computerScore ++;
              }
              console.clear();
              console.log(result);
              console.log("Computer: " + computerScore);
-				     console.log("Player: " + playerScore);
+	     console.log("Player: " + playerScore);
              }
 
     //End result
@@ -59,7 +59,7 @@
                 return "Congratulations! You won the game!";
 			       } 
              else {
-				     return "You lost! Better luck next time";
+		return "You lost! Better luck next time";
 			       }
     }
 
