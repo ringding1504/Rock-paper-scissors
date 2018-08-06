@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<<<<<<< HEAD
     <head>
         <meta charset="UTF-8"> 
         <title>Rock-Paper-Scissors</title>
@@ -34,3 +35,72 @@
        <script src="RPS.js"></script>
     </body>
 </html>
+=======
+<head>
+  <title>Rock-paper-scissors</title>
+</head>
+<body>
+  <script>
+    // Random computer return
+    function computerPlay () {
+      rpc = ["rock", "paper", "scissors"];
+      let rpcRan = rpc[Math.floor(Math.random()*rpc.length)];
+      return rpcRan;
+    }
+
+    // One round of game with player input
+    let result;
+    function playRound(playerSelection,computerSelection) {
+             playerSelection = prompt("Type: Rock, Paper or Scissors").toLowerCase();
+             computerSelection = computerPlay ();
+             if (playerSelection == "rock" && computerSelection == "scissors" || 
+             	 playerSelection == "paper" && computerSelection == "rock" || 
+             	 playerSelection == "scissors" && computerSelection == "paper") {
+             	result = "You win!";
+               
+             }
+             else if (playerSelection == "rock" && computerSelection == "paper" || 
+                      playerSelection == "paper" && computerSelection == "scissors" || 
+                      playerSelection == "scissors" && computerSelection == "rock") {
+             	result = "You lose!";
+                    
+             }
+             else {
+                result = "Tie!";
+            
+             }
+             return result
+    }
+
+    // Full game of 5 rounds with updating scores 
+    function game () {
+             let playerScore = 0;
+             let computerScore = 0;
+             while (playerScore < 5 && computerScore < 5) {
+		playRound();
+             if (result.search("win") >= 0) {
+                 playerScore ++;
+             }
+             else if (result.search("lose") >= 0) {
+                      computerScore ++;
+             }
+             console.clear();
+             console.log(result);
+             console.log("Computer: " + computerScore);
+	      console.log("Player: " + playerScore);
+             }
+
+    //End result
+             if (playerScore == 5) {
+                return "Congratulations! You won the game!";
+			       } 
+             else {
+		return "You lost! Better luck next time";
+			       }
+    }
+
+  console.log(game())
+  </script>
+</body>
+</html>
+>>>>>>> f0457cc540510a1507fd969ea12ad6a2480f2759
